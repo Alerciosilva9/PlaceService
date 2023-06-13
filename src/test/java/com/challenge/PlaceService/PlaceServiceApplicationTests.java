@@ -10,7 +10,8 @@ import javax.naming.Name;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class PlaceServiceApplicationTests {
-
+	@Autowired
+	WebTestClient client;
 
 
 
@@ -20,7 +21,14 @@ class PlaceServiceApplicationTests {
 
 	@Test
 	void testPlaceCreate(){
-
+		/*
+		PlaceDto dto = new PlaceDto();
+		dto.setName("ola");
+		dto.setCity("teste");
+		dto.setState("teste5");
+		client.post().uri("/").bodyValue(new PlaceDto()).exchange().expectBody()
+				.jsonPath("name").isEqualTo(dto.getName())
+				.jsonPath("city").isEqualTo(dto.getCity());*/
 	}
 
 

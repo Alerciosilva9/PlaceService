@@ -19,7 +19,7 @@ public class PlaceController {
 
 
     @PostMapping
-    public Place createPlace(@RequestBody @Valid PlaceDto place){
+    public PlaceDto createPlace(@RequestBody @Valid PlaceDto place){
         return service.createPlace(place);
     }
     @PutMapping("/{id}")
@@ -39,7 +39,7 @@ public class PlaceController {
     @GetMapping("/{id}")
     public ResponseEntity<?> findPlace(@PathVariable Integer id){
         Place finded = service.findPlace(id);
-        if(finded!=null)return ResponseEntity.ok(finded);
+        if(finded!=null)return ResponseEntity.ok(new PlaceDto(finded));
         return ResponseEntity.notFound().build();
     }
 

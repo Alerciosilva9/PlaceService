@@ -24,10 +24,10 @@ public class PlaceService {
     PlaceRepository repository;
 
 
-    public Place createPlace(PlaceDto dto){
+    public PlaceDto createPlace(PlaceDto dto){
         Place place = new Place(dto);
         place.setCreatedAt(LocalDateTime.now());
-        return repository.save(place);
+        return new PlaceDto(repository.save(place));
     }
 
     public List<PlaceDto> findAll(){
