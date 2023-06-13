@@ -6,6 +6,6 @@ create table challenge.places(
      slug varchar(30),
      city varchar,
      state varchar,
-     created time,
-     updated time
+     created timestamp,
+     updated timestamp
 );

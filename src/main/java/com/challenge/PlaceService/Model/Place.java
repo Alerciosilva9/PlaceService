@@ -1,6 +1,9 @@
 package com.challenge.PlaceService.Model;
 
+import com.challenge.PlaceService.Dtos.PlaceDto;
 import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
 
 import java.time.LocalDateTime;
 
@@ -75,4 +78,14 @@ public class Place {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    public Place(PlaceDto dto){
+        this.name = dto.getName();
+        this.city = dto.getCity();
+        this.slug = dto.getSlug();
+        this.state = dto.getState();
+    }
+    public Place(){}
+
+
 }
